@@ -1,10 +1,10 @@
-public abstract class Nutriment extends Grocery{
- double weight;
- double kcal;
- double proteins;
- double carbohydrates;
- double fats;
- double fiber;
+public abstract class Nutriment extends Grocery {
+    double weight;
+    double kcal;
+    double proteins;
+    double carbohydrates;
+    double fats;
+    double fiber;
 
     public Nutriment(String company, String name, Double weight, Double kcal, Double proteins, Double carbohydrates, Double fats, Double fiber) {
         super(company, name);
@@ -15,10 +15,33 @@ public abstract class Nutriment extends Grocery{
         this.fats = fats;
         this.fiber = fiber;
     }
-    public Nutriment update(String company, String name, Double weight, Double kcal,Double proteins, Double carbohydrates, Double fats, Double fiber){
-       if (company != null){
 
-       }
+    public void update(String company, String name, Double weight, Double kcal, Double proteins, Double carbohydrates, Double fats, Double fiber) {
+        if (company != null) {
+            this.company = company;
+        }
+        if (name != null) {
+            this.name = name;
+        }
+        if (weight != null) {
+            this.weight = weight;
+        }
+        if (kcal != null) {
+            this.kcal = kcal;
+        }
+        if (proteins != null) {
+            this.proteins = proteins;
+        }
+        if (carbohydrates != null) {
+            this.carbohydrates = carbohydrates;
+        }
+        if (fats != null) {
+            this.fats = fats;
+        }
+        if (fiber != null) {
+            this.fiber = fiber;
+        }
+
     }
 
     public double getProteins() {
@@ -41,43 +64,44 @@ public abstract class Nutriment extends Grocery{
     public double getKcal() {
         return kcal * (weight / 100);
     }
-     public double getTotalProteins(){
-        return proteins * (weight / 100);
-     }
 
-     public double getTotalCarbohydrates(){
+    public double getTotalProteins() {
+        return proteins * (weight / 100);
+    }
+
+    public double getTotalCarbohydrates() {
         return carbohydrates * (weight / 100);
 
-     }
+    }
 
-     public double getTotalFats(){
+    public double getTotalFats() {
         return fats * (weight / 100);
 
-     }
+    }
 
-     public double getTotalFiber(){
+    public double getTotalFiber() {
         return fiber * (weight / 100);
 
-     }
+    }
 
     @Override
     public String toString() {
         String rez = "";
         rez = "Company: " + company + "\n"
-                + "Name: " + name +"\n"
+                + "Name: " + name + "\n"
                 + "Weight: " + weight + "g" + "\n"
                 + "Kcal: " + getKcal() + "\n"
-                + "Proteins: " + ((getTotalProteins()/weight) * 100) +"%" + "\n"
-                + "Carbohydrates: " + ((getTotalCarbohydrates()/weight) * 100) +"%" + "\n"
-                + "Fats: " + ((getTotalFats()/weight) * 100) + "\n"
-                + "Fiber: " + ((getTotalFiber()/weight) * 100) + "\n";
+                + "Proteins: " + ((getTotalProteins() / weight) * 100) + "%" + "\n"
+                + "Carbohydrates: " + ((getTotalCarbohydrates() / weight) * 100) + "%" + "\n"
+                + "Fats: " + ((getTotalFats() / weight) * 100) + "\n"
+                + "Fiber: " + ((getTotalFiber() / weight) * 100) + "\n";
         return rez;
     }
 
-    public String totalNutrientTable(){
+    public String totalNutrientTable() {
         String rez = "";
         rez = "Company: " + company + "\n"
-                + "Name: " + name +"\n"
+                + "Name: " + name + "\n"
                 + "Weight: " + weight + "g" + "\n"
                 + "Kcal: " + getKcal() + "\n"
                 + "Proteins: " + getTotalProteins() + "\n"
