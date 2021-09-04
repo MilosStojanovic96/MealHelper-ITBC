@@ -25,6 +25,7 @@ public class Test {
         nutriments1.add(n4);
         nutriments1.add(n5);
         nutriments1.add(n6);
+
         nutriments2.add(n7);
         nutriments2.add(n8);
         nutriments2.add(n9);
@@ -59,8 +60,8 @@ public class Test {
         System.out.println(f);
 
 
-        System.out.println( a.getMeals());
-        System.out.println(a.toString());
+
+        System.out.println(a);
         System.out.println(a.search("Beans"));
         System.out.println( a.search(nutriments2));
         System.out.println(a.search(56.1));

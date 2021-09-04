@@ -43,4 +43,13 @@ public class Fridge {
     public List<Nutriment> getNutriments() {
         return nutriments;
     }
+
+    @Override
+    public String toString() {
+        String rez = "";
+        for (Nutriment el : nutriments){
+           rez += el.toString();
+        }
+       return rez;
+    }
 }
