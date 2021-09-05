@@ -4,27 +4,30 @@ import java.util.List;
 public class Fridge {
     List<Nutriment> nutriments;
 
+
     public Fridge() {
         this.nutriments = new ArrayList<>();
     }
 
+
     public void add(Nutriment n) {
-        boolean isFound = false;
-        for (Nutriment el : nutriments) {
-            if (el.equals(n)) {
-                isFound = true;
-                el.weight += n.weight;
-                break;
-            }
-        }
-        if (isFound) {
+        if (!nutriments.contains(n)) {
             nutriments.add(n);
+        } else {
+            for (Nutriment el : nutriments) {
+                if (el == n) {
+                    el.weight += n.weight;
+                    break;
+                }
+            }
         }
     }
 
+
+
     public void remove(Nutriment n) {
         for (Nutriment el : nutriments) {
-            if (el.equals(n)) {
+            if (el == n) {
                 nutriments.remove(el);
                 break;
             }
@@ -33,7 +36,7 @@ public class Fridge {
 
     public void remove(Nutriment n, double weight) {
         for (Nutriment el : nutriments) {
-            if (el.equals(n)) {
+            if (el == n) {
                 el.weight -= weight;
                 break;
             }

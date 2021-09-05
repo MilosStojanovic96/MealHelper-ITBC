@@ -37,4 +37,8 @@ public abstract class Grocery implements Energy {
 
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

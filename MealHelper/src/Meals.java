@@ -12,15 +12,10 @@ public class Meals {
         return meals;
     }
 
+
+
     public void add(Meal m) {
-        boolean isFound = false;
-        for (Meal el : meals) {
-            if (el.equals(m)) {
-                isFound = true;
-                break;
-            }
-        }
-        if (isFound) {
+        if(!meals.contains(m)){
             meals.add(m);
         }
     }
@@ -47,7 +42,7 @@ public class Meals {
     public List<Meal> search(List<Nutriment> nutriment) {
         List<Meal> list = new ArrayList<>();
         for (Meal el : meals) {
-            if (el.nutriments.contains(nutriment)) {
+            if (el.nutriments == nutriment) {
                 list.add(el);
             }
         }
@@ -68,25 +63,10 @@ public class Meals {
     public String toString() {
         String rez = "";
         for (Meal el : meals) {
-            rez += el.id + " | Name: " + el.name + "\n";
+            rez +=  el.id + " | Name: " + el.name + "\n";
         }
         return rez;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || this.getClass() != obj.getClass()) {
-            return false;
-        }
-        Meal x = (Meal) obj;
-        for (Meal el : meals) {
-            if (el.getId().equals(x.getId())) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }

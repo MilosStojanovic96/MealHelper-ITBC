@@ -24,23 +24,24 @@ public class Meal implements Energy {
         return name;
     }
 
-    public void add(Nutriment n) {
-        boolean isFound = false;
-        for (Nutriment el : nutriments) {
-            if (el.equals(n)) {
-                isFound = true;
-                el.weight += n.weight;
-                break;
-            }
-        }
-        if (isFound) {
+    public void add(Nutriment n){
+        if(!nutriments.contains(n)){
             nutriments.add(n);
+        } else {
+            for (Nutriment el: nutriments){
+                if(el == n){
+                    el.weight+=n.weight;
+                    break;
+                }
+            }
         }
     }
 
+
+
     public void remove(Nutriment n) {
         for (Nutriment el : nutriments) {
-            if (el.equals(n)) {
+            if (el == n) {
                 nutriments.remove(el);
                 break;
             }
@@ -49,7 +50,7 @@ public class Meal implements Energy {
 
     public void remove(Nutriment n, double weight) {
         for (Nutriment el : nutriments) {
-            if (el.equals(n)) {
+            if (el == n) {
                 el.weight -= weight;
                 break;
             }
@@ -68,7 +69,7 @@ public class Meal implements Energy {
     public double getProteins() {
         double sum = 0;
         for (Nutriment el : nutriments) {
-            sum += el.getKcal();
+            sum += el.getTotalProteins();
         }
         return sum;
     }
@@ -112,5 +113,12 @@ public class Meal implements Energy {
         }
         return false;
 
+    }
+
+    @Override
+    public String toString() {
+        String rez = "";
+        rez += id + " | Name: " + name ;
+        return rez;
     }
 }

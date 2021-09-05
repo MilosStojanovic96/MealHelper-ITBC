@@ -87,28 +87,30 @@ public abstract class Nutriment extends Grocery {
     @Override
     public String toString() {
         String rez = "";
-        rez = "Company: " + company + "\n"
-                + "Name: " + name + "\n"
-                + "Weight: " + weight + "g" + "\n"
-                + "Kcal: " + getKcal() + "\n"
-                + "Proteins: " + ((getTotalProteins() / weight) * 100) + "%" + "\n"
-                + "Carbohydrates: " + ((getTotalCarbohydrates() / weight) * 100) + "%" + "\n"
-                + "Fats: " + ((getTotalFats() / weight) * 100) + "\n"
-                + "Fiber: " + ((getTotalFiber() / weight) * 100) + "\n";
+        rez = "\t" + "Company: " + company + "\n"
+                + "\t" + "Name: " + name + "\n"
+                + "\t" + "Weight: " + 100 + "g" + "\n"
+                + "\t" + "Kcal: " + kcal + "\n"
+                + "\t"  + "Proteins: " + proteins + "%" + "\n"
+                + "\t" + "Carbohydrates: " + carbohydrates + "%" + "\n"
+                + "\t"  + "Fats: " + fats + "%" + "\n"
+                + "\t"  + "Fiber: " + fiber + "%" + "\n"+ "\n";
         return rez;
     }
 
     public String totalNutrientTable() {
         String rez = "";
-        rez = "Company: " + company + "\n"
-                + "Name: " + name + "\n"
-                + "Weight: " + weight + "g" + "\n"
-                + "Kcal: " + getKcal() + "\n"
-                + "Proteins: " + getTotalProteins() + "\n"
-                + "Carbohydrates: " + getTotalCarbohydrates() + "\n"
-                + "Fats: " + getTotalFats() + "\n"
-                + "Fiber: " + getTotalFiber() + "\n";
+        rez =  "\t" + "Company: " + company + "\n"
+                + "\t" + "Name: " + name + "\n"
+                + "\t" + "Weight: " + weight + "g" + "\n"
+                + "\t" + "Kcal: " + getKcal() + "\n"
+                + "\t" + "Proteins: " + getTotalProteins() + "\n"
+                + "\t" + "Carbohydrates: " + getTotalCarbohydrates() + "\n"
+                + "\t" + "Fats: " + getTotalFats() + "\n"
+                + "\t" + "Fiber: " + getTotalFiber() + "\n" + "\n";
         return rez;
 
     }
+
+
 }
