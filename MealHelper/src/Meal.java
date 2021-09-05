@@ -107,7 +107,7 @@ public class Meal implements Energy {
             return false;
         }
         Meal x = (Meal) obj;
-        if (this.id.equals(x.id)) {
+        if (id.equals(x.id)) {
             return true;
         }
         return false;

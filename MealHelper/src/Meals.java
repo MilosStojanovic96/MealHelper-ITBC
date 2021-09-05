@@ -68,7 +68,7 @@ public class Meals {
     public String toString() {
         String rez = "";
         for (Meal el : meals) {
-            rez = el.id + " | Name: " + el.name;
+            rez += el.id + " | Name: " + el.name + "\n";
         }
         return rez;
     }

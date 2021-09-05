@@ -7,10 +7,18 @@ public abstract class Grocery implements Energy {
         this.name = name;
     }
 
+    public String getCompany() {
+        return company;
+    }
+
     public String getName() {
         return name;
     }
-    //get id
+
+
+    public String getId(){
+        return getId();
+    }
 
 
     @Override
