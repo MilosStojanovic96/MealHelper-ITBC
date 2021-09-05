@@ -89,12 +89,12 @@ public abstract class Nutriment extends Grocery {
         String rez = "";
         rez = "\t" + "Company: " + company + "\n"
                 + "\t" + "Name: " + name + "\n"
-                + "\t" + "Weight: " + 100 + "g" + "\n"
-                + "\t" + "Kcal: " + kcal + "\n"
-                + "\t"  + "Proteins: " + proteins + "%" + "\n"
-                + "\t" + "Carbohydrates: " + carbohydrates + "%" + "\n"
-                + "\t"  + "Fats: " + fats + "%" + "\n"
-                + "\t"  + "Fiber: " + fiber + "%" + "\n"+ "\n";
+                + "\t" + "Weight: " + weight + "g" + "\n"
+                + "\t" + "Kcal: " + ((getKcal()/weight) * 100) + "\n"
+                + "\t"  + "Proteins: " + ((getTotalProteins()/weight) * 100) + "%" + "\n"
+                + "\t" + "Carbohydrates: " + ((getTotalCarbohydrates()/weight) * 100) + "%" + "\n"
+                + "\t"  + "Fats: " + ((getTotalFats()/weight) * 100) + "%" + "\n"
+                + "\t"  + "Fiber: " + ((getTotalFiber()/weight) * 100) + "%" + "\n"+ "\n";
         return rez;
     }
 
